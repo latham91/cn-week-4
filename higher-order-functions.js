@@ -9,6 +9,7 @@ const helloCodenation = () => {
 
 const logFiveTimes = (fn) => {
     for (let i = 0; i < 5; i++) {
+        // loop 5 times.
         fn();
     }
 };
