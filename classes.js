@@ -59,4 +59,4 @@ const till = new CoffeeShop(); // create new coffeeshop instance.
 const customer = new Person("Aaron", 5.0); // create new person instance with their name and balance.
 
 till.order("Coke").order("Coffee").order("Fanta").order("Water"); // order drinks.
-customer.checkBalance(till.completeOrder());
+customer.checkBalance(till.completeOrder()); // complete order and check against customer's balance.
