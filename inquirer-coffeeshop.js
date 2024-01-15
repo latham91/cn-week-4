@@ -1,3 +1,9 @@
+// To anyone thats trying to run this code.
+// Make sure you have installed the dependencies.
+// clone the repo and run 'npm install' or 'yarn install' depending on what you use.
+// I have added a start script to the package.json so you can run using.
+// 'npm start' or 'yarn start'
+
 import inquirer from "inquirer";
 
 console.log("Hello, welcome to the coffee shop!");
@@ -56,7 +62,7 @@ inquirer
     })
     .catch((error) => {
         if (error.isTtyError) {
-            console.log("Prompt couldnt be sent.");
+            console.log("Prompt could not be sent.");
         } else {
             console.log("Something else went wrong");
         }
