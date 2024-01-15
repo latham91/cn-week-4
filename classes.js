@@ -50,7 +50,7 @@ class Person {
 }
 
 const till = new CoffeeShop(); // create new coffeeshop instance.
-const customer = new Person("Aaron", 5.0); // create new person instance.
+const customer = new Person("Aaron", 5.0); // create new person instance with their name and balance.
 
 till.order("Coke");
 till.order("Coffee");
