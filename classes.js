@@ -21,6 +21,11 @@ class CoffeeShop {
     }
 
     order(drink) {
+        if (!this.drinks[drink]) {
+            // check if drink exists.
+            return console.log(`Drink: ${drink} does not exist`); // log error if drink doesn't exist.
+        }
+
         this.orderList.push(drink); // add drink to order array.
         this.total += this.drinks[drink]; // add drink price to total.
         return this;
