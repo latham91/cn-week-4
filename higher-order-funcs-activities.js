@@ -35,6 +35,7 @@ console.log(multiplyByThree(numbersArr)); // returns new array with each item mu
 // Test this function to ensure it works by passing a number to the doMaths function.
 // Then passing a number and one of the four maths functions to the returned function.
 
+// Math functions
 const add = (num1, num2) => {
     return num1 + num2;
 };
