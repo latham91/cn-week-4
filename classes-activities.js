@@ -4,6 +4,8 @@
 // STRETCH: Have a separate class for a customer that holds their name and total cash they have.
 // compare the total price of the ordered drinks against the total cash the customer can afford.
 
+import chalk from "chalk";
+
 class CoffeeShop {
     constructor() {
         this.drinks = {
@@ -23,7 +25,7 @@ class CoffeeShop {
     order(drink) {
         if (!this.drinks[drink]) {
             // check if drink exists.
-            return console.log(`Drink: ${drink} does not exist`); // log error if drink doesn't exist.
+            return console.log(chalk.red(`Drink: ${drink} does not exist`)); // log error if drink doesn't exist.
         }
 
         this.orderList.push(drink); // add drink to order array.
@@ -32,7 +34,7 @@ class CoffeeShop {
     }
 
     completeOrder() {
-        console.log(`Coffee Shop Till: Your total is £${this.total}`); // log total price.
+        console.log(chalk.white(`Coffee Shop Till: Your total is £${this.total}`)); // log total price.
         return this.total; // return total price.
     }
 }
@@ -47,10 +49,10 @@ class Person {
         if (this.cash >= total) {
             // check if customer has enough cash.
             this.cash -= total; // remove total from customer's cash.
-            return console.log(`${this.name}: Your new balance is £${this.cash}`); // log new balance.
+            return console.log(chalk.blue(`${this.name}: Your new balance is £${this.cash}`)); // log new balance.
         } else {
             // if customer doesn't have enough cash.
-            return console.log(`${this.name}: You have insufficient funds.`); // log insufficient funds.
+            return console.log(chalk.red(`${this.name}: You have insufficient funds.`)); // log insufficient funds.
         }
     }
 }

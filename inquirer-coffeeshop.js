@@ -11,11 +11,12 @@ console.log(chalk.bgWhiteBright.bold("Hello, welcome to the coffee shop!"));
 
 const questions = [
     {
-        type: "input",
-        name: "name",
+        type: "input", // this is the type of prompt.
+        name: "name", // name of the variable that holds the reply.
         message: chalk.yellowBright("What is your name?"),
         default: false,
         validate: (value) => {
+            // checks to see if the reply is not empty.
             if (value) {
                 return true;
             } else {
