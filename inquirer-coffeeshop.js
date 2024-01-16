@@ -20,7 +20,7 @@ const questions = [
             if (value) {
                 return true;
             } else {
-                return "Please enter your name.";
+                return chalk.red("Please enter your name.");
             }
         },
     },
