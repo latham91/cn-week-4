@@ -5,14 +5,15 @@
 // 'npm start' or 'yarn start'
 
 import inquirer from "inquirer";
+import chalk from "chalk";
 
-console.log("Hello, welcome to the coffee shop!");
+console.log(chalk.bgWhiteBright.bold("Hello, welcome to the coffee shop!"));
 
 const questions = [
     {
         type: "input",
         name: "name",
-        message: "What is your name?",
+        message: chalk.yellowBright("What is your name?"),
         default: false,
         validate: (value) => {
             if (value) {
@@ -25,14 +26,14 @@ const questions = [
     {
         type: "list",
         name: "order",
-        message: "What would you like to order?",
+        message: chalk.yellowBright("What would you like to order?"),
         choices: ["Espresso", "Latte", "Cappuccino", "Mocha", "Macchiato"],
         default: false,
     },
     {
         type: "list",
         name: "size",
-        message: "What size would you like?",
+        message: chalk.yellowBright("What size would you like?"),
         choices: ["Small", "Medium", "Large"],
         default: "medium",
         validate: (value) => {
@@ -46,7 +47,7 @@ const questions = [
     {
         type: "confirm",
         name: "iced",
-        message: "Would you like your order iced?",
+        message: chalk.yellowBright("Would you like your order iced?"),
         default: false,
     },
 ];
@@ -55,15 +56,17 @@ inquirer
     .prompt(questions)
     .then((answers) => {
         console.log(
-            `Thanks ${answers["name"]}! Your order of "${answers["size"]} ${answers["iced"] ? "Iced" : "Hot"} ${
-                answers["order"]
-            }" will be ready for you shortly!.`
+            chalk.bgWhiteBright.bold(
+                `Thanks ${answers["name"]}! Your order of "${answers["size"]} ${answers["iced"] ? "Iced" : "Hot"} ${
+                    answers["order"]
+                }" will be ready for you shortly!.`
+            )
         );
     })
     .catch((error) => {
         if (error.isTtyError) {
-            console.log("Prompt could not be sent.");
+            console.log(chalk.red("Prompt could not be sent."));
         } else {
-            console.log("Something else went wrong");
+            console.log(chalk.red("Something else went wrong"));
         }
     });
